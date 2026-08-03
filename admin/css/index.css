@@ -85,6 +85,14 @@ aside a:hover{
     transform: translateX(8px);
   }
 }
+.active{
+  color: var(--dark-color);
+  li{
+    border-left: solid var(--red-like-color);
+    background-color: #F9F7F7;
+    transform: translateX(8px);
+  }
+}
 /*=========== MAIN============= */
 main{
   position: absolute;
