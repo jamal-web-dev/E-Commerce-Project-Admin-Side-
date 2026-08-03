@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap');
+:root{
+  --font-family: "Play", sans-serif;
+  --dark-color: #262D34;
+  --light-pinkish-bg: #F9F7F7;
+  --heading-fs: 1.25rem;
+  --link-fs: 16px;
+  --th-bg: #F6F8FB;
+  --red-like-color: #FF6C2F;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+body{
+  font-family: var(--font-family);
+  color: var(--dark-color);
+  background-color: var(--light-pinkish-bg);
+}
+img{
+  width: 100%;
+  display: block;
+}

@@ -1,0 +1,94 @@
+body{
+  position: relative;
+}
+header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  left: 280px;
+  right: 0;
+  top: 0;
+  padding: 29px;
+  background-color: var(--light-pinkish-bg);
+  box-shadow: 0 4px 8px rgba(196, 196, 196, 0.704);
+  z-index: 9999;
+}
+header .greeting{
+  font-size: var(--heading-fs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+header .search-box{
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 16px;
+  /* border: 1px solid var(--dark-color); */
+  display: flex;
+  padding-left: 12px;
+  background-color: white;
+}
+header input{
+  border: none;
+  background-color: transparent;
+  outline: none;
+  font-size: 17px;
+  color: var(--dark-color);
+}
+header button{
+  padding: 12px  32px;  
+  border: none;
+  background-color: var(--red-like-color);
+  color: white;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 4px;
+}
+/*======== SIDE BAR ========= */
+aside{
+  background-color: var(--dark-color);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  bottom: 0;
+  color: white;
+  padding: 38px 25px;
+}
+.logo{
+  font-size:  1.5rem;
+  font-weight: bold;
+}
+aside ul{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+aside a{
+  color: rgb(186, 186, 186);
+  font-size: var(--link-fs);
+  font-weight: bold;
+  transition: 0.4s;
+}
+aside li{
+  border-left: solid var(--dark-color);
+  border-radius: 5px;
+  padding: 15px 20px;
+  transition: 0.4s;
+}
+aside a:hover{
+  color: var(--dark-color);
+  li{
+    border-left: solid var(--red-like-color);
+    background-color: #F9F7F7;
+    transform: translateX(8px);
+  }
+}
+/*=========== MAIN============= */
+main{
+  position: absolute;
+  left: 280px;
+  top: 120px;
+  right: 0;
+}
