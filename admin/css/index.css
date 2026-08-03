@@ -99,4 +99,59 @@ main{
   left: 280px;
   top: 120px;
   right: 0;
+  padding-inline: 40px;
+  padding-block: 40px;;
+}
+.statistic_container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  /* margin-top: 40px; */
+}
+ .box{
+  background-color: white;
+  padding: 30px 24px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--red-like-color);
+}
+.product_box , .category_box{
+  border-bottom: 2px solid var(--dark-color);
+}
+.box span{
+  font-size: 20px;
+}
+.table-container{
+  background-color: white;
+  margin-top: 40px;
+  padding-block: 20px;
+  border-radius: 10px;
+}
+h2{
+  font-size: var(--link-fs);
+  padding-inline:  22px;
+  padding-block: 0 25px;
+  text-transform: uppercase;
+}
+table{
+  width: 100%;
+  font-size: var(--link-fs);
+  border-collapse: collapse;
+
+}
+thead{
+  background-color: var(--th-bg);
+}
+
+td,th{
+  padding-block: 28px;
+  padding-left: 22px;
+  text-align: left;
+  border-bottom: 1px solid var(--dark-color);
+}
+tr:hover{
+  background-color: rgba(241, 241, 241, 0.637);
 }
