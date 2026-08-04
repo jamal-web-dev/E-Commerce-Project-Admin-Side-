@@ -1,0 +1,153 @@
+
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 60px auto;
+}
+
+h2 {
+  color: #222;
+  margin-bottom: 25px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 22px 20px;
+  text-align: left;
+  color: #222;
+  font-size: 16px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+td {
+  padding: 22px 20px;
+  border-bottom: 1px solid #eeeeee;
+  font-size: 15px;
+}
+
+tbody tr:hover {
+  background-color: #fafafa;
+}
+
+.product-name {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 220px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-width: 250px;
+}
+
+.emoji {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f5f8;
+  border-radius: 10px;
+  font-size: 28px;
+}
+
+.actions button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.size {
+  display: inline-block;
+    min-width: 45px;
+  padding: 7px 10px;
+
+  text-align: center;
+
+  background-color: #eeeeee;
+  color: #333;
+
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.actions {
+  white-space: nowrap;
+}
+
+.actions button {
+  width: 38px;
+  height: 38px;
+
+  margin-right: 7px;
+
+  border: none;
+  border-radius: 7px;
+
+  background-color: transparent;
+
+  font-size: 17px;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.view {
+  color: #555;
+}
+
+.view:hover {
+  background-color: #e8e8e8;
+}
+
+.edit {
+  color: #e39b00;
+}
+
+.edit:hover {
+  background-color: #fff2cc;
+}
+
+.delete {
+  color: #e53935;
+}
+
+.delete:hover {
+  background-color: #ffdddd;
+}
+
+/* Phone screen */
+@media screen and (max-width: 600px) {
+
+  .container {
+    width: 95%;
+    margin-top: 30px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+}
