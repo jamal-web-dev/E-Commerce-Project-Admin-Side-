@@ -7,6 +7,9 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="stylesheet" href="../css/variable.css">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/add_category.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
 </head>
 <body>
   <!--====== HEADER ======== -->
@@ -37,6 +40,226 @@
   </aside>
   <main>
     <!-- ALL YOUR CODE SHOULD BE HERE -->
+
+    <main class="container">
+
+        <h2>Add Product</h2>
+        <section>
+            <h4>Add Product Photo</h4>
+
+            <label for="product-image" class="upload-box">
+                <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                <p>
+                    <strong>Drop your images here,</strong>
+                    or <span>click to browse</span>
+                </p>
+
+                <small>Maximum image size: 5MB</small>
+            </label>
+
+            <input type="file" id="product-image" accept="image/*">
+        </section>
+
+        <section>
+            <h4>Product Information</h4>
+
+            <div class="grid">
+
+                <div class="input-box">
+                    <label>Product Name</label>
+                    <input type="text" placeholder="Enter product name">
+                </div>
+
+                <div class="input-box">
+                    <label>Product Category</label>
+
+                    <select>
+                        <option>Choose a category</option>
+                        <option>T-Shirts</option>
+                        <option>Shirts</option>
+                        <option>Jeans</option>
+                        <option>Shoes</option>
+                        <option>Oversized Hoodie</option>
+                    </select>
+                </div>
+
+                <div class="input-box">
+                    <label>Brand</label>
+                    <input type="text" placeholder="Enter brand name">
+                </div>
+
+                <div class="input-box">
+                    <label>Weight</label>
+                    <input type="text" placeholder="Example: 0.5 kg">
+                </div>
+
+                <div class="input-box">
+                    <label>Gender</label>
+
+                    <select>
+                        <option>Select gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                        <option>Unisex</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="size-section">
+
+                <label>Size</label>
+
+                <div class="sizes">
+
+                    <label>
+                        <input type="checkbox">
+                        <span>X</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>S</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>M</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>L</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>XL</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox">
+                        <span>2XL</span>
+                    </label>
+
+                </div>
+
+            </div>
+
+            <div class="color-section">
+
+                <label>Colors</label>
+
+                <div class="colors">
+
+                    <button class="color black"></button>
+                    <button class="color yellow"></button>
+                    <button class="color orange"></button>
+                    <button class="color green"></button>
+                    <button class="color red"></button>
+                    <button class="color blue"></button>
+
+                </div>
+
+            </div>
+
+            <div class="input-box description">
+
+                <label>Description</label>
+
+                <textarea
+                    placeholder="Enter description about the product">
+                </textarea>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <div class="grid">
+
+                <div class="input-box">
+                    <label>Tag Number</label>
+                    <input type="text" placeholder="Enter tag number">
+                </div>
+
+                <div class="input-box">
+                    <label>Stock</label>
+                    <input type="number" placeholder="Quantity">
+                </div>
+
+                <div class="input-box">
+                    <label>Tag</label>
+                    <input type="text" placeholder="Example: New">
+                </div>
+
+            </div>
+
+        </section>
+
+        <section>
+
+            <h4>Pricing Details</h4>
+
+            <div class="grid">
+
+                <div class="input-box">
+
+                    <label>Price</label>
+
+                    <div class="money-input">
+
+                        <span>₦</span>
+
+                        <input
+                            type="number"
+                            placeholder="0.00">
+
+                    </div>
+
+                </div>
+
+
+                <div class="input-box">
+
+                    <label>Discount</label>
+
+                    <div class="money-input">
+
+                        <span>₦</span>
+
+                        <input
+                            type="number"
+                            placeholder="0.00">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div class="buttons">
+
+            <button class="cancel">
+                Cancel
+            </button>
+
+            <button class="save">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Save Product
+
+            </button>
+
+        </div>
+
+    </main>
+    
   </main>
 </body>
 </html>
