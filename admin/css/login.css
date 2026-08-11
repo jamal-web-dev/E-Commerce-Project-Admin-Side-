@@ -1,0 +1,44 @@
+body{
+  background-color: var(--light-pinkish-bg);
+}
+.login {
+  width: 35%;
+  display: block;
+  /* align-items: center;
+  justify-items: center; */
+  text-align: center;
+  height: 16rem;
+  border: 1px solid whitesmoke;
+  padding: 20px;
+  margin-top: 70px;
+  margin-inline: auto;
+}
+input {
+  width: 100%;
+  border-radius: 5px;
+  padding: 6px 12px;
+  background-color: aliceblue;
+  border: solid 2px white;
+  justify-items: center;
+  padding-left: 20px;
+  font-size: 18px;
+}
+input:focus {
+  outline: 2px solid var(--red-like-color);
+  outline-offset: 1px;
+  border: none;
+}
+button {
+  width: 100%;
+  height: 45px;
+  border-radius: 5 px;
+  background-color: var(--red-like-color);
+  color: white;
+  border: white 1px solid;
+  font-weight: bold;
+  font-size: large;
+  cursor: pointer;
+}
+h2{
+  margin-bottom: 30px;
+}

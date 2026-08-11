@@ -7,12 +7,14 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
   <link rel="stylesheet" href="../css/variable.css">
   <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="../css/order.css">
+
 </head>
 <body>
   <!--====== HEADER ======== -->
   <header>
     <div class="greeting">
-      WELlCOM back! 👋🏻 tomiwa
+      WELlCOM back! 👋🏻 Admin
     </div>
     <div class="search-box">
       <input type="text" placeholder="Search">
@@ -23,7 +25,7 @@
   <!--=========== SIDE BAR =========== -->
   <aside>
     <div class="logo">
-      🛒 TomiHub
+      🛒 NovaCart
     </div>
     <ul>
       <a href="index.html"><li>🏠 Dashboard</li></a>
@@ -37,6 +39,51 @@
   </aside>
   <main>
     <!-- ALL YOUR CODE SHOULD BE HERE -->
+     <div class="order">
+        <h1>Orders</h1>
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Product name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Size</th>
+                <th>Status</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Wristwatch</td>
+                <td>&#8358;30,000</td>
+                <td>1</td>
+                <td>L</td>
+                <td>Pending</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Jelwery box</td>
+                <td>&#8358;45,000</td>
+                <td>3</td>
+                <td>S</td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Wedding ring</td>
+                <td>&#8358;45,000</td>
+                <td>2</td>
+                <td>S</td>
+                <td>Completed</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Necklace</td>
+                <td>&#8358;4000</td>
+                <td>1</td>
+                <td>S</td>
+                <td>Completed</td>
+            </tr>
+        </table>
+    </div>
   </main>
 </body>
 </html>
