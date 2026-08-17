@@ -1,3 +1,4 @@
+<?php include 'includes/access.php' ?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,39 +8,19 @@
     <link
       rel="icon"
       href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>" />
-    <link rel="stylesheet" href="../css/variable.css" />
-    <link rel="stylesheet" href="../css/index.css" />
-    <link rel="stylesheet" href="../css/product.css" />
+    <link rel="stylesheet" href="css/variable.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/product.css" />
     <link
       rel="stylesheet"
-      href="..//fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css" />
+      href="fontawesome-free-7.1.0-web/fontawesome-free-7.1.0-web/css/all.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
   </head>
   <body>
-    <!--====== HEADER ======== -->
-    <header>
-      <div class="greeting">WELlCOM back! 👋🏻 Admin</div>
-      <div class="search-box">
-        <input type="text" placeholder="Search" />
-        <button>Search</button>
-      </div>
-    </header>
-
-    <!--=========== SIDE BAR =========== -->
-    <aside>
-      <div class="logo">🛒 NovaCart</div>
-      <ul>
-        <a href="index.html"><li>🏠 Dashboard</li></a>
-        <a href="product.html" class="active"><li>🍕 Products</li></a>
-        <a href="add_product.html"><li>🍑 Add Product</li></a>
-        <a href="category.html"><li>🏛️ Category</li></a>
-        <a href="add_category.html"><li>🚪 Add Category</li></a>
-        <a href="order.html"><li>📲 Orders</li></a>
-        <a href=""><li>⬅️ Logout</li></a>
-      </ul>
-    </aside>
+    <!--====== HEADER & SIDEBAR ======== -->
+    <?php include 'includes/sidebar.php' ?>
     <main>
       <!-- ALL YOUR CODE SHOULD BE HERE -->
 
