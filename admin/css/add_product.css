@@ -1,0 +1,27 @@
+form{
+  display: flex;
+  flex-direction:column;
+  gap: 15px;
+  width: 60%;
+  margin-inline: auto;
+  box-shadow: 0 0 9px rgb(217, 217, 217);
+  padding: 25px;
+  height: auto;
+  margin-top: 40px;
+}
+.input-holder{
+  display: flex;
+  width: 100%;
+  gap: 15px;
+}
+input, textarea, button{
+  width: 100%;
+  padding: 12px;
+  font-size: 17px;
+  border: 1px solid var(--red-like-color);
+  border-radius: 5px;
+  color: var(--red-like-color);
+}
+button{
+  background-color: var(--red-like-color);
+}
