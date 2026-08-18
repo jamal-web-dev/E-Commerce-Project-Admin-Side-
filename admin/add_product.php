@@ -1,4 +1,4 @@
-<?php include 'includes/access.php' ?>
+<?php include 'scripts/script.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +15,29 @@
   <!--====== HEADER & SIDEBAR ======== -->
   <?php include 'includes/sidebar.php' ?>
   <main>
+    <?= $msg; ?>
     <!-- ALL YOUR CODE SHOULD BE HERE -->
-     <form action="">
+     <form method="post" enctype="multipart/form-data">
         <div class="input-holder">
-          <input type="text" name="product_name" placeholder="Product name">
-          <input type="text" name="product_price" placeholder="Product price">
+          <input type="text" name="product_name" placeholder="Product name" required>
+          <input type="number" name="product_price" placeholder="Product price" required>
         </div>
-        <input type="text" name="product_category" placeholder="Product Category">
-        <textarea name="product_details" id="" placeholder="Product details"></textarea>
-        <button>Add Product</button>
+        <select name="category" id="" required>
+          <option value="">Select Category</option>
+          <?php
+            global $connect;
+            $stmt = "SELECT * FROM categories";
+            $query = mysqli_query($connect, $stmt);
+            while ($category = mysqli_fetch_assoc($query)) {
+              $categoryId = $category['id'];
+              $categoryName = $category['category_name'];
+              echo " <option value='$categoryId'>$categoryName</option>";
+            }
+          ?>
+        </select>
+        <input type="file" name="product_image" accept=".jpg, .jpeg, .png" id="" required>
+        <textarea name="product_details" id="" placeholder="Product details" required></textarea>
+        <button type="submit" name="add_product">Add Product</button>
      </form>
   </main>
 </body>

@@ -69,13 +69,21 @@
         </div>
         <?php
           }else{
+            global $connect;
+            $categoryId = (int)$_GET["editcat"];
+            $stmt = "SELECT * FROM categories WHERE id = $categoryId";
+            $query = mysqli_query($connect, $stmt);
+            if (mysqli_num_rows($query) > 0) {
+              $category = mysqli_fetch_assoc($query);
         ?>
 
         <div class="form-panel">
           <h2>Edit Category</h2>
+            <a href="add_category.php">New Category</a>
           <p class="sub">
             Fields marked required must be filled before saving.
           </p>
+
 
           <form method="post">
             <div class="field">
@@ -84,6 +92,7 @@
                 type="text"
                 id="catName"
                 name="catName"
+                value="<?= $category["category_name"]; ?>"
                 placeholder="e.g. Shoes"
                 required />
             </div>
@@ -94,14 +103,19 @@
                 id="catDesc"
                 name="catDesc"
                 placeholder="Short description shown to shoppers"
-                required></textarea>
+                required><?= $category["category_description"]; ?></textarea>
             </div>
 
-            <button class="submit-btn" name="add_category">Add category</button>
+            <button class="submit-btn" name="edit_category">edit category</button>
           </form>
           
         </div>
-        <?php } ?>
+        <?php 
+         }else{
+              header('location:add_category.php');
+            }
+        } 
+        ?>
 
         <div class="grid">
           <?php

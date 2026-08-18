@@ -13,5 +13,6 @@ if (isset($_GET["delcat"]) && !empty($_GET["delcat"])) {
         header('location:add_category.php');
     }else{
         $_SESSION['msg'] = "Something went wrong, unable to delet category";
+        header('location:add_category.php');
     }
 }

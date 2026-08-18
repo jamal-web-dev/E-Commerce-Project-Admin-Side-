@@ -43,37 +43,34 @@
               <tr>
                 <th>Product Name & Size</th>
                 <th>Price</th>
-                <th>Stock</th>
                 <th>Category</th>
-                <th>Rating</th>
                 <th>Action</th>
               </tr>
             </thead>
 
             <tbody>
+              <?php
+                global $connect;
+                $stmt = "SELECT p.*,c.category_name FROM products p INNER JOIN categories c ON c.id = p.category ORDER BY p.id DESC";
+                $query = mysqli_query($connect, $stmt);
+                $numrows = mysqli_num_rows($query);
+                if ($numrows > 0) {
+                 while ($product = mysqli_fetch_assoc($query)) {
+
+              ?>
               <tr>
                 <td class="product">
-                  <img src="https://via.placeholder.com/50" />
+                  <img src="product_image/<?= $product["product_image"]; ?>" />
 
                   <div>
-                    <h4>Black T-Shirt</h4>
-                    <p>Size : S, M, L, XL</p>
+                    <h4><?= ucfirst($product['product_name']) ?></h4>
                   </div>
                 </td>
 
-                <td>$80.00</td>
+                <td>&#8358;<?= number_format($product["price"]); ?></td>
 
-                <td>
-                  <strong>486 Item Left</strong><br />
-                  155 Sold
-                </td>
 
-                <td>Fashion</td>
-
-                <td class="rating">
-                  ⭐ 4.5 <br />
-                  55 Reviews
-                </td>
+                <td><?= ucfirst($product['category_name']) ?></td>
 
                 <td class="action">
                   <i class="fa-regular fa-eye"></i>
@@ -81,68 +78,12 @@
                   <i class="fa-regular fa-trash-can"></i>
                 </td>
               </tr>
-
-              <tr>
-                <td class="product">
-                  <img src="https://via.placeholder.com/50" />
-
-                  <div>
-                    <h4>Olive Green Bag</h4>
-                    <p>Size : S, M</p>
-                  </div>
-                </td>
-
-                <td>$135.00</td>
-
-                <td>
-                  <strong>784 Item Left</strong><br />
-                  674 Sold
-                </td>
-
-                <td>Hand Bag</td>
-
-                <td class="rating">
-                  ⭐ 4.1 <br />
-                  143 Reviews
-                </td>
-
-                <td class="action">
-                  <i class="fa-regular fa-eye"></i>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <i class="fa-regular fa-trash-can"></i>
-                </td>
-              </tr>
-
-              <tr>
-                <td class="product">
-                  <img src="https://via.placeholder.com/50" />
-
-                  <div>
-                    <h4>Women Golden Dress</h4>
-                    <p>Size : S, M</p>
-                  </div>
-                </td>
-
-                <td>$213.00</td>
-
-                <td>
-                  <strong>769 Item Left</strong><br />
-                  180 Sold
-                </td>
-
-                <td>Fashion</td>
-
-                <td class="rating">
-                  ⭐ 4.4 <br />
-                  171 Reviews
-                </td>
-
-                <td class="action">
-                  <i class="fa-regular fa-eye"></i>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <i class="fa-regular fa-trash-can"></i>
-                </td>
-              </tr>
+              <?php   
+                 }
+                }else{
+                  echo "<tr><td colspan='4'>No product found</td></tr>";
+                }
+              ?>
             </tbody>
           </table>
         </div>
