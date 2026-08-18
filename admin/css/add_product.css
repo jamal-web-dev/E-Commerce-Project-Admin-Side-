@@ -14,13 +14,13 @@ form{
   width: 100%;
   gap: 15px;
 }
-input, textarea, button{
+input, textarea, select, button{
   width: 100%;
   padding: 12px;
   font-size: 17px;
   border: 1px solid var(--red-like-color);
   border-radius: 5px;
-  color: var(--red-like-color);
+  /* color: var(--red-like-color); */
 }
 button{
   background-color: var(--red-like-color);

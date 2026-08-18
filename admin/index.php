@@ -1,3 +1,4 @@
+<?php include 'includes/access.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,36 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛒</text></svg>">
-  <link rel="stylesheet" href="../css/variable.css">
-  <link rel="stylesheet" href="../css/index.css">
+  <link rel="stylesheet" href="css/variable.css">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-  <!--====== HEADER ======== -->
-  <header>
-    <div class="greeting">
-      WELlCOM back! 👋🏻 Admin.
-    </div>
-    <div class="search-box">
-      <input type="text" placeholder="Search">
-      <button>Search</button>
-    </div>
-  </header>
+  <!--====== HEADER & SIDEBAR ======== -->
+  <?php include 'includes/sidebar.php' ?>
 
-  <!--=========== SIDE BAR =========== -->
-  <aside>
-    <div class="logo">
-      🛒 NovaCart
-    </div>
-    <ul>
-      <a href="index.html" class="active"><li>🏠 Dashboard</li></a>
-      <a href="product.html"><li>🍕 Products</li></a>
-      <a href="add_product.html"><li>🍑 Add Product</li></a>
-      <a href="category.html"><li>🏛️ Category</li></a>
-      <a href="add_category.html"><li>🚪 Add Category</li></a>
-      <a href="order.html"><li>📲 Orders</li></a>
-      <a href=""><li>⬅️ Logout</li></a>
-    </ul>
-  </aside>
   <main>
     <!-- ALL YOUR CODE SHOULD BE HERE -->
      <div class="statistic_container">
