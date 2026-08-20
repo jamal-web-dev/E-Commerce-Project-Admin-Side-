@@ -86,3 +86,34 @@ if (isset($_POST["add_product"])) {
         }
     }
 }
+
+// Edit Product
+if (isset($_POST["edit_product"])) {
+    $productId = (int)$_GET["editProduct"];
+    $product_name = testInput($_POST["product_name"]);
+    $product_price = testInput($_POST["product_price"]);
+    $category = (int)testInput($_POST["category"]);
+    $product_details = testInput($_POST["product_details"]);
+    $product_image = $_FILES['product_image']['name'];
+    $target_dir = "product_image/";
+    $ext = strtolower(basename(pathinfo($product_image, PATHINFO_EXTENSION)));
+    $filename = date("M-d-y-Hms") .".".$ext;
+
+    if (empty($product_name) || empty($product_price) || empty($category) || empty($product_details)) {
+        $msg = "Please fill all the required fields";
+    }else{
+        $stmt = "";
+        if (empty($product_image)) {
+            $stmt = "UPDATE products SET product_name = '$product_name', price = '$product_price', category = $category, product_description = '$product_details' WHERE id = $productId";
+        }else{
+            $stmt = "UPDATE products SET product_name = '$product_name', price = '$product_price', category = $category, product_description = '$product_details', product_image = '$filename' WHERE id = $productId";
+            move_uploaded_file($_FILES['product_image']['tmp_name'], $target_dir.$filename);
+        }
+        $query = mysqli_query($connect, $stmt);
+        if ($query) {
+            $msg = "Product updated successfully";
+        }else{
+            $msg = "<p>Something went wrong</p>";
+        }
+    }
+}

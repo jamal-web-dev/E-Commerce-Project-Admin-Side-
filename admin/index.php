@@ -22,54 +22,43 @@
       </div>
       <div class="box product_box">
         <span>Total Product</span>
-        <h1>45,000</h1>
+        <h1>
+          <?php
+            global $connect;
+            $stmt = "SELECT SUM(price) AS totalprice FROM products";
+            $query = mysqli_query($connect, $stmt);
+            $product = mysqli_fetch_assoc($query);
+            $totalprice = $product['totalprice'];
+            echo "&#8358;".number_format($totalprice);
+          ?>
+        </h1>
       </div>
       <div class="box category_box">
         <span>Total Category</span>
-        <h1>14</h1>
+        <h1>
+          <?php
+            global $connect;
+            $stmt = "SELECT COUNT(*) AS category FROM categories";
+            $query = mysqli_query($connect, $stmt);
+            $category = mysqli_fetch_assoc($query);
+            $allcategory = $category['category'];
+            echo $allcategory;
+          ?>
+        </h1>
       </div>
       <div class="box">
         <span>Total Users</span>
-        <h1>7,000</h1>
+        <h1>
+          <?php
+            global $connect;
+            $stmt = "SELECT COUNT(*) AS users FROM users";
+            $query = mysqli_query($connect, $stmt);
+            $user = mysqli_fetch_assoc($query);
+            $allusers = $user['users'];
+            echo number_format($allusers);
+          ?>
+        </h1>
       </div>
-     </div>
-
-     <div class="table-container">
-      <h2>Recent Products</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>PRODUCT NAME</th>
-            <th>PRICE</th>
-            <th>CATEGORY</th>
-            <th>QUANTITY</th>
-            <th>SIZE</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Black T-shirt</td>
-            <td>$80.00</td>
-            <td>Fashion</td>
-            <td>8</td>
-            <td>S</td>
-          </tr>
-          <tr>
-            <td>Olive Green Leather Bag</td>
-            <td>$80.00</td>
-            <td>Fashion</td>
-            <td>8</td>
-            <td>S</td>
-          </tr>
-          <tr>
-            <td>Olive Green Leather Bag</td>
-            <td>$70.00</td>
-            <td>Fashion</td>
-            <td>8</td>
-            <td>S</td>
-          </tr>
-        </tbody>
-      </table>
      </div>
   </main>
 </body>
