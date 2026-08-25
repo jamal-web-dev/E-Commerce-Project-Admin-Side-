@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    color: #222;
+    background: #fff;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.container{
+    width: 92%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/*TOP BAR */
+
+.top-bar {
+    background: #17191f;
+    color: #aaa;
+    padding: 8px 0;
+    font-size: 12px;
+}
+
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*header*/
+
+header {
+    background: #17191f;
+    color: white;
+    border-bottom: 3px solid #e3183b;
+    padding: 20px 0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.logo {
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.logo span{
+    color: #e3183b;
+}
+
+.search {
+    display: flex;
+    flex: 1;
+    height: 45px;
+}
+
+.search select {
+    border: none;
+    padding: 0 15px;
+    border-radius:25px 0 0 25px;
+}
+
+.search input {
+    flex: 1;
+    border: none;
+    padding: 0 15px;
+    outline: none;
+}
+
+.search button {
+    border: none;
+    background: #e3183b;
+    color: white;
+    padding: 0 30px;
+    font-weight: bold;
+    border-radius: 0 25px 25px 0;
+}
+
+.header-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* nav */
+nav{
+    border-bottom: 1px solid #ddd;
+}
+
+nav .container{
+    display: flex;
+    gap: 35px;
+    padding: 20px 0;
+}
+
+nav a{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav .active {
+    color: #e3183b;
+}
+
+/* Hero*/
+.hero{
+    padding: 45px 0;
+}
+
+.hero-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.hero-card{
+    height: 250px;
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+}
+
+.hero-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:linear-gradient(
+        135deg,
+        rgba(215c,0,45,.95) 0 55%,
+        transparent 55%
+    );
+}
+
+.hero-text {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    top: 35px;
+    left: 30px;
+}
+
+.hero-text h2{
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.hero-text a {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/*product*/
+
+.section {
+    padding: 30px 0 60px;
+}
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.section-tiltle h2{
+    font-size: 25px;
+}
+
+.tabs {
+    display: flex;
+    gap: 25px;
+}
+
+.tabs a{
+    color: #777;
+    font-size: 14px;
+}
+
+.tabs a.active{
+    color: #e3183b;
+    border-bottom: 2px solid #e3183b;
+    padding-bottom: 6px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.product{
+    border: 1px solid #e4e4e4;
+    position: relative;
+    background: white;
+}
+
+.product:hover {
+    box-shadow: 0 8px 25px rgba(0,0,0,.1);
+}
+
+.product-image {
+    height: 240px;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+}
+
+.badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e3183b;
+    color: white;
+    padding: 6px 9px;
+    font-size: 11px;
+}
+
+.product-info {
+    text-align: center;
+    padding: 20px;
+}
+
+.category {
+    color: #aaa;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.product-name {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.price {
+    color: #e3183b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.old-price{
+    color: #aaa;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.rating{
+    color: #e3183b;
+    margin: 12px 0;
+}
+
+/*Page Title*/
+
+.page-title {
+    background: #f5f5f5;
+    padding: 45px 0;
+}
+
+.page-title h1 {
+    font-size: 34px;
+}
+
+/* .breadcrumb {
+    color: green;
+} */
+
+/*Footer*/
+
+footer {
+    background: #17191f;
+    color: #aaa;
+    padding: 45px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+footer h3 {
+    color: white;
+    margin-bottom: 15px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 8px 0;
+}
+
+.copyright {
+    border-top: 1px solid #333;
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+}
