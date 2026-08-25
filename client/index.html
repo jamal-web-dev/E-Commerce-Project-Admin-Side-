@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <span>+2349053639212</span>
+            <span>info@gmail.com</span>
+            <span>USD|My Account</span>
+        </div>
+    </div>
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">
+                Electro <span>.</span>
+            </a>
+            <form class="search" action="products.php">
+                <select>
+                    <option> All Category</option>
+                    <option> Laptops</option>
+                    <option> Smartphones</option>
+                    <option> Cameras</option>
+                    <option> Accesories</option>
+                </select>
+
+                <input type="text" name="search" placeholder="Search here">
+                <button type="submit">Search</button>
+            </form>
+
+            <div class="header-links">
+                <a href="#"><br>Whilist</a>
+                <a href="checkout.php"><br>Your cart</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <a class="active" href="index.html">Home</a>
+            <a class="product.php">Hot deals</a>
+            <a class="category.php">Categories</a>
+            <a class="product.php?cat=laptops">Laptops</a>
+            <a class="product.php?cat=smartphones">Smartphones</a>
+            <a class="product.php?cat=cameras">Cameras</a>
+            <a class="product.php?cat=accessories">Accessories</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-card">
+                <img src="images/laptop.jpg">
+                <div class="hero-text">
+                    <h2>Laptop <br>Collection</h2>
+                    <a href="category.php?cat=laptops">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <img src="images/headphones.jpg">
+                <div class="hero-text">
+                    <h2>Accessories <br>Collection</h2>
+                    <a href="category.php?cat=accessories">SHOP NOW</a>
+                </div>
+            </div>
+
+            <div class="hero-card">
+                <img src="images/camera).jpg">
+                <div class="hero-text">
+                    <h2>Cameras <br>Collection</h2>
+                    <a href="category.php?cat=cameras">SHOP NOW</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>NEW PRODUCTS</h2>
+                
+                <div class="tabs">
+                    <a class="active" href="#">Laptops</a>
+                    <a href="#">Smartphones</a>
+                    <a href="#">Cameras</a>
+                    <a href="#">Accessories</a>
+                </div>
+
+            </div>
+
+            <div class="products">
+                <div class="Product">
+                    <span class="badge">NEW</span>
+                    <div class="product-image">
+                        <img src="images/headphones.jpg">
+                    </div>
+
+                    <div class="product-info">
+                        <div class="category">Accesories</div>
+
+                        <div class="product-name">
+                            Wireless Headphones
+                        </div>
+
+                        <span class="price">
+                            98,000
+                        </span>
+
+                        <span class="old-price">
+                            120,000
+                        </span>
+
+                        <div class="rating">
+                            *****
+                        </div>
+                    </div>
+                </div>
+                <div class="product">
+                    <span class="badge">>-30%</span>
+
+                    <div class="product-image">
+                        <img src="images/laptop.jpg">
+                    </div>
+
+                    <div class="product-info">
+                        <div class="category">Laptops</div>
+
+                        <div class="product-name">
+                            Premium Laptop
+                        </div>
+
+                        <span class="price">
+                            980,000
+                        </span>
+
+                        <span class="old-price">
+                            1,200,000
+                        </span>
+
+                        <div class="rating">
+                            *****
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="product">
+                    <div class="product-image">
+                        <img src="images/tablet.jpg">
+                    </div>
+
+                    <div class="product-info">
+                        <div class="category">Smartphones</div>
+
+                        <div class="product-name">
+                            Android Tablet
+                        </div>
+
+                        <span class="price">
+                            198,000
+                        </span>
+
+                        <span class="old-price">
+                            250,000
+                        </span>
+
+                        <div class="rating">
+                            *****
+                        </div>
+                    </div>
+                </div>
+            
+            <div class="product">
+                    <div class="product-image">
+                        <img src="images/headphone 2.jpg">
+                    </div>
+
+                    <div class="product-info">
+                        <div class="category">Accessories</div>
+
+                        <div class="product-name">
+                            Studio Headphones
+                        </div>
+
+                        <span class="price">
+                            85,000
+                        </span>
+
+                        <span class="old-price">
+                            100,000
+                        </span>
+
+                        <div class="rating">
+                            *****
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-grid">
+            <div>
+                <h3>Electro.</h3>
+                <p>Your online electronnics store</p>
+            </div>
+
+            <div>
+                <h3>Categories</h3>
+                <h3>Laptops</h3>
+                <h3>Smartphones</h3>
+                <h3>Cameras</h3>
+            </div>
+
+            <div>
+                <h3>Account</h3>
+                <p><a href="login.php">Login</a></p>
+                <p><a href="register.php">Register</a></p>
+                <p><a href="checkout.php">Checkout</a></p>
+            </div>
+
+            <div>
+                <h3>Support</h3>
+                <h3>Contact</h3>
+                <h3>Shipping</h3>
+                <h3>Returns</h3>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
