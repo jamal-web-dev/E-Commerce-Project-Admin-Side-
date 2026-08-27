@@ -1,0 +1,91 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+section{
+  width: 100%;
+  height: 100vh;
+}
+h2{
+  text-align: center;
+  color: #614B42;
+  /* margin-top: 10px */
+}
+p{
+  text-align: center;
+  margin-top: 10px;
+}
+.container{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.img-box{
+  background-image: url(../images/frozen-chicken-wings.jpg);
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.417);
+  background-blend-mode: overlay;
+}
+.login-img{
+  background-image: url(../images/images\ \(1\).jpeg);
+}
+.form-box{
+  background-color: #DBC0BD; 
+  padding: 90px;
+  padding-bottom: 0;
+  /* height: 100%; */
+}
+form {
+  width: 100%;
+  margin-inline: auto;
+  margin-top: 20px;
+  padding: 22px;
+  border-radius: 12;  
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #614B42;
+  border-radius: 12px;
+}
+form .box{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+label{
+  font-size: 18px;
+  color: white; 
+}
+input{
+  width: 100%;
+  font-size: 18px;
+  padding: 8px 12px;
+  outline: none;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 5px;
+  color: white;
+}
+input::placeholder{
+  color: rgb(184, 184, 184);
+}
+input[type="submit"]{
+  padding-block: 12px;
+  background-color: wheat;
+  border-color: wheat;
+  color: #614B42;
+  cursor: pointer;
+  transition: 0.4s;
+}
+input[type="submit"]:hover{
+  transform: translateY(-5px);
+}
+.error{
+  text-align: left;
+  color: red;
+}
