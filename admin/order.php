@@ -1,4 +1,3 @@
-<?php include 'includes/access.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

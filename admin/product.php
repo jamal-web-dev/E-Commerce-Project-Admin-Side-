@@ -23,18 +23,26 @@
     <?php include 'includes/sidebar.php' ?>
     <main>
       <!-- ALL YOUR CODE SHOULD BE HERE -->
-
+      <?php
+        if (isset($_SESSION['msg'])) {
+          echo $_SESSION['msg'];
+          unset($_SESSION['msg']);
+        }
+        // echo $msg;
+      ?>
       <!-- Font Awesome -->
 
       <div class="container">
         <div class="top-bar">
           <h2>PRODUCT LIST</h2>
 
-          <div class="right">
-            <input type="text" placeholder="Search..." />
+          <form method="get">
+            <div class="right">
+              <input type="text" name="search" required placeholder="Search..." />
 
-            <button>Search</button>
-          </div>
+              <button type="submit">Search</button>
+            </div>
+          </form>
         </div>
 
         <div class="table-container">
@@ -51,7 +59,12 @@
             <tbody>
               <?php
                 global $connect;
-                $stmt = "SELECT p.*,c.category_name FROM products p INNER JOIN categories c ON c.id = p.category ORDER BY p.id DESC";
+                $where = "";
+                if (isset($_GET['search'])) {
+                    $search = $_GET['search'];
+                    $where = "WHERE product_name LIKE '$search%' OR product_description LIKE '$search%'";
+                }
+                $stmt = "SELECT p.*,c.category_name FROM products p INNER JOIN categories c ON c.id = p.category $where ORDER BY p.id DESC";
                 $query = mysqli_query($connect, $stmt);
                 $numrows = mysqli_num_rows($query);
                 if ($numrows > 0) {
@@ -73,9 +86,10 @@
                 <td><?= ucfirst($product['category_name']) ?></td>
 
                 <td class="action">
-                  <i class="fa-regular fa-eye"></i>
-                  <i class="fa-regular fa-pen-to-square"></i>
-                  <i class="fa-regular fa-trash-can"></i>
+                  <a href="view_product.php"><i class="fa-regular fa-eye"></i></a>
+                  <a href="edit_product.php?editProduct=<?=
+                  $product['id']; ?>"><i class="fa-regular fa-pen-to-square"></i></a>
+                  <a href="action.php?delProduct=<?= $product['id']; ?>"><i class="fa-regular fa-trash-can"></i></a>
                 </td>
               </tr>
               <?php   
