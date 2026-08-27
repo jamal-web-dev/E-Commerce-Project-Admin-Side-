@@ -1,6 +1,7 @@
 <?php 
-  require "config.php";
-  $errName = $errEmail = $errPassword = "";
+  require "includes/config.php";
+  global $connect;
+  $errName = $errEmail = $errPhoneNumber = $errPassword = $errAddress = "";
   $succMsg = "";
 
   function testInput($input){
@@ -14,7 +15,9 @@
   if($_SERVER["REQUEST_METHOD"] == "POST"){
     $fullname = $_POST["fullname"];
     $email = $_POST["email"];
+    $phone_number = $_POST["phone_number"];
     $password = $_POST["password"];
+    $address = $_POST["address"];
 
     // VALIDATING THE USER INPUTED DATA. 
 
@@ -36,6 +39,14 @@
     }else{
       $email = testInput($email);
       $errEmail = "";
+    }
+
+    // Phone Number
+    if(empty($phone_number)){
+      $errPhoneNumber = "Phone Number is required";
+    }else{
+      $phone_number = testInput($phone_number);
+      $errPhoneNumber = "";
 
     }
 
@@ -49,8 +60,15 @@
       $errPassword = "";
     }
 
+     // PASSWORD VALIDATE. 
+    if(empty($address)){
+      $errAddress = "Address is required";
+    }else{
+      $errAddress = "";
+    }
+
     // CHECKING IF ALL ERRORS IS EMPTY AN GETTING THE CORRECT DATA.
-    if(empty($errName) && empty($errEmail) && empty($errPassword)){
+    if(empty($errName) && empty($errEmail) && empty($errPhoneNumber) && empty($errPassword) && empty($errAddress)){
       $password = password_hash($password, PASSWORD_DEFAULT);
 
         if(!$connect){
@@ -63,12 +81,14 @@
           if(mysqli_num_rows($stmt) > 0){
             $errEmail = "Email Already exist";
           }else{
-            $sql = "INSERT INTO users(fullname, email, password) VALUES('$fullname', '$email', '$password')";
+            $sql = "INSERT INTO users(fullname, email, phone_number, password, address) VALUES('$fullname', '$email', '$phone_number', '$password', '$address')";
             $stmt = mysqli_query($connect, $sql);
             $succMsg = "Registration Successfull";
             header("location: login.php");
           }
         }
+    }else{
+      $succMsg = "Fill the required fields";
     }
   }
   

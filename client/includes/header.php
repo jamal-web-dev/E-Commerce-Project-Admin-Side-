@@ -3,15 +3,15 @@
             <a href="index.html" class="logo">
                 Electro <span>.</span>
             </a>
-            <form class="search" action="products.php">
-                <select>
-                    <option> All Category</option>
+            <form class="search">
+                <select name="category">
+                    <option value="0"> All Category</option>
                     <?php
                         global $connect;
                         $stmt = "SELECT * FROM categories";
                         $query = mysqli_query($connect, $stmt);
                         while($category = mysqli_fetch_assoc($query)){
-                            echo '<option>'.$category['category_name'].'</option>';
+                            echo '<option value="'.$category["id"].'">'.$category['category_name'].'</option>';
                         }
                     ?>
                 </select>

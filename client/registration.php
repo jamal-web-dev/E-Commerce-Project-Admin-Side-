@@ -1,5 +1,5 @@
 <?php 
-  require "reg-validation.php";
+  include "reg-validation.php";
 ?>
 
 <!DOCTYPE html>
@@ -19,7 +19,7 @@
       <div class="form-box">
         <h2>Register Now!</h2>
         <p>Get your premium frozen foods right away.</p>
-        <p class="error"><?=$errName . $errEmail . $errPassword?></p>
+        <p class="error"><?=$succMsg?></p>
         <form action="" method="post">
           <div class="box">
             <label for="name">Full Name</label>
@@ -30,8 +30,16 @@
             <input type="text" placeholder="example@gmail.com" name="email">
           </div>
           <div class="box">
+            <label for="phone_number">Phone Number</label>
+            <input type="text" placeholder="Phone Number" name="phone_number">
+          </div>
+          <div class="box">
+            <label for="address">Address</label>
+            <textarea name="address" id="address"></textarea>
+          </div>
+          <div class="box">
             <label for="name">Password</label>
-            <input type="text" placeholder="at least 8 characters" name="password">
+            <input type="password" placeholder="at least 8 characters" name="password">
           </div>
           <input type="submit">
         </form>

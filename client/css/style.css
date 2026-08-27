@@ -61,7 +61,7 @@ label{
   font-size: 18px;
   color: white; 
 }
-input{
+input, textarea{
   width: 100%;
   font-size: 18px;
   padding: 8px 12px;

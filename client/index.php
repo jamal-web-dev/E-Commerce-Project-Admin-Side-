@@ -49,7 +49,17 @@
             <div class="products">
                 <?php
                     global $connect;
-                    $stmt = "SELECT p.*, c.category_name FROM products p INNER JOIN categories c ON c.id = p.category";
+                    $where = "";
+                    if(isset($_GET["category"]) && isset($_GET["search"])){
+                        $category = $_GET["category"];
+                        $search = $_GET["search"];
+                        if ($category > 0) {
+                            $where = "WHERE (p.product_name LIKE '%$search%' OR p.product_description LIKE '%$search%') AND p.category = $category";
+                        }else{
+                            $where = "WHERE p.product_name LIKE '%$search%' OR p.product_description LIKE '%$search%'";
+                        }
+                    }
+                    $stmt = "SELECT p.*, c.category_name FROM products p INNER JOIN categories c ON c.id = p.category $where";
                     $query = mysqli_query($connect, $stmt);
                     while($product = mysqli_fetch_assoc($query)):
                         // var_dump($product);

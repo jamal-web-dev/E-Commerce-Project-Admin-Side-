@@ -1,5 +1,6 @@
 <?php 
-  require "config.php";
+  require "includes/config.php";
+   global $connect;
   session_start();
   $errMsg = "";
 
@@ -41,7 +42,7 @@
           $_SESSION["id"] = $user["id"];
           $_SESSION["fullname"] = $user["fullname"];
           // echo
-          // header("location: profile.php");
+          header("location: profile.php");
         }else{
           $errMsg = "Invalid Email or Password";
         }
